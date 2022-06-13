@@ -17,6 +17,7 @@
 		04B520AB285782E800AD7C64 /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AA285782E800AD7C64 /* CreateHypedEventView.swift */; };
 		04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AC2857835700AD7C64 /* HypedEvent.swift */; };
 		04B520AF285787E500AD7C64 /* FormLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AE285787E500AD7C64 /* FormLabelView.swift */; };
+		04B520B128578B9200AD7C64 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520B028578B9200AD7C64 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		04B520AA285782E800AD7C64 /* CreateHypedEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHypedEventView.swift; sourceTree = "<group>"; };
 		04B520AC2857835700AD7C64 /* HypedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEvent.swift; sourceTree = "<group>"; };
 		04B520AE285787E500AD7C64 /* FormLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelView.swift; sourceTree = "<group>"; };
+		04B520B028578B9200AD7C64 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				04B520AA285782E800AD7C64 /* CreateHypedEventView.swift */,
 				04B520AE285787E500AD7C64 /* FormLabelView.swift */,
 				04B520AC2857835700AD7C64 /* HypedEvent.swift */,
+				04B520B028578B9200AD7C64 /* ImagePicker.swift */,
 			);
 			path = HypedList;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				04B520A728577F0800AD7C64 /* PastView.swift in Sources */,
 				04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */,
 				04B520AB285782E800AD7C64 /* CreateHypedEventView.swift in Sources */,
+				04B520B128578B9200AD7C64 /* ImagePicker.swift in Sources */,
 				04B520A928577F1300AD7C64 /* DiscoverView.swift in Sources */,
 				04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */,
 				04B520AF285787E500AD7C64 /* FormLabelView.swift in Sources */,

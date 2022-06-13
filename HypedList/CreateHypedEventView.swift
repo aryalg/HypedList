@@ -11,6 +11,7 @@ struct CreateHypedEventView: View {
     
     @StateObject var hypedEvent = HypedEvent()
     @State var showTime = false
+    @State var showImagePicker = false
     
     
     var body: some View {
@@ -31,12 +32,23 @@ struct CreateHypedEventView: View {
                 }
             }
             
+            Button(action: {
+                showImagePicker = true
+            }) {
+                Text("Pick  Image")
+            }
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker()
+            }
+            
             Section {
                                 ColorPicker(selection: $hypedEvent.color) {
                                     FormLabelView(title: "Color", iconSystemName: "eyedropper", color: .yellow)
 
                 }
             }
+            
+            
             
             Section {
                 FormLabelView(title: "URL", iconSystemName: "link", color: .orange)
