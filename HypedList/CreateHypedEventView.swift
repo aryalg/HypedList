@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct CreateHypedEventView: View {
+    
+    @StateObject var hypedEvent = HypedEvent()
+    
+    
     var body: some View {
         Text("Create Hyped Event")
     }
