@@ -16,6 +16,7 @@
 		04B520A928577F1300AD7C64 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520A828577F1300AD7C64 /* DiscoverView.swift */; };
 		04B520AB285782E800AD7C64 /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AA285782E800AD7C64 /* CreateHypedEventView.swift */; };
 		04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AC2857835700AD7C64 /* HypedEvent.swift */; };
+		04B520AF285787E500AD7C64 /* FormLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AE285787E500AD7C64 /* FormLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		04B520A828577F1300AD7C64 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		04B520AA285782E800AD7C64 /* CreateHypedEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHypedEventView.swift; sourceTree = "<group>"; };
 		04B520AC2857835700AD7C64 /* HypedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEvent.swift; sourceTree = "<group>"; };
+		04B520AE285787E500AD7C64 /* FormLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				04B520A428577EFD00AD7C64 /* UpcomingView.swift */,
 				04B520A628577F0800AD7C64 /* PastView.swift */,
 				04B520AA285782E800AD7C64 /* CreateHypedEventView.swift */,
+				04B520AE285787E500AD7C64 /* FormLabelView.swift */,
 				04B520AC2857835700AD7C64 /* HypedEvent.swift */,
 			);
 			path = HypedList;
@@ -157,6 +160,7 @@
 				04B520AB285782E800AD7C64 /* CreateHypedEventView.swift in Sources */,
 				04B520A928577F1300AD7C64 /* DiscoverView.swift in Sources */,
 				04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */,
+				04B520AF285787E500AD7C64 /* FormLabelView.swift in Sources */,
 				04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */,
 				04B520A528577EFD00AD7C64 /* UpcomingView.swift in Sources */,
 			);
