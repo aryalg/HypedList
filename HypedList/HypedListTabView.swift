@@ -10,16 +10,22 @@ import SwiftUI
 struct HypedListTabView: View {
     var body: some View {
         TabView {
+            NavigationView {
+                
+            
             UpcomingView()
-                .tabItem {
+            }    .tabItem {
+                    Image(systemName: "calendar")
                     Text("Upcoming")
                 }
             DiscoverView()
                 .tabItem {
+                    Image(systemName: "magnifyingglass")
                     Text("Discover")
                 }
             PastView()
                 .tabItem {
+                    Image(systemName: "gobackward")
                     Text("Past")
                 }
         }

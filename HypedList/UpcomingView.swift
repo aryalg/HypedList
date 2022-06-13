@@ -10,11 +10,24 @@ import SwiftUI
 struct UpcomingView: View {
     var body: some View {
         Text("Upcoming View")
+            .navigationTitle("Upcoming")
+            .toolbar {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "calendar.badge.plus")
+                        .font(.title)
+                }
+
+            }
     }
 }
 
 struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingView()
+        NavigationView {
+            UpcomingView()
+        }
+        
     }
 }
