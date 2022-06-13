@@ -13,7 +13,31 @@ struct CreateHypedEventView: View {
     
     
     var body: some View {
-        Text("Create Hyped Event")
+        Form {
+            Section {
+                TextField("Family Vacation", text: $hypedEvent.title)
+                    .textInputAutocapitalization(.words)
+            }
+            
+            Section {
+                DatePicker("Date", selection: $hypedEvent.date, displayedComponents: [.date, .hourAndMinute])
+                    .datePickerStyle(.graphical)
+            }
+            
+            Section {
+                ColorPicker("Color", selection: $hypedEvent.color)
+            }
+            
+            Section {
+                TextField("Website", text: $hypedEvent.url)
+                    .keyboardType(.URL)
+                    .textInputAutocapitalization(.never)
+                    
+            }
+          
+            
+           
+        }
     }
 }
 
