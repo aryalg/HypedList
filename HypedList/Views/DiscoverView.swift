@@ -16,6 +16,17 @@ struct DiscoverView: View {
         
 
             .navigationTitle("Discover")
+            .toolbar {
+                Button {
+                    data.getDiscoverEvents()
+                    
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.title)
+                }
+                
+
+            }
     }
 }
 

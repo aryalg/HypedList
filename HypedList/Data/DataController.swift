@@ -89,8 +89,12 @@ class DataController: ObservableObject {
                                 hypedEvent.color = Color(UIColor(colorHex))
                             }
                             
-                            if let imageUrl = jsonHypedEvent["imageUrl"] {
-//                                hypedEvent.imageData = id
+                            if let imageUrl = jsonHypedEvent["imageURL"] {
+                                if let url = URL(string: imageUrl) {
+                                    if let data = try? Data(contentsOf: url) {
+                                        hypedEvent.imageData = data
+                                    }
+                                }
                             }
                             hypedEventsToAdd.append(hypedEvent)
                             
