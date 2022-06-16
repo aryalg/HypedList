@@ -10,11 +10,25 @@ import SwiftUI
 struct UpcomingView: View {
     
     @State var showingCreateView = false
+    var hypedEvent: [HypedEvent] = []
+    
     
     
     
     var body: some View {
-        Text("Upcoming View")
+        
+        VStack {
+        if hypedEvent.isEmpty {
+            Text("Nothing to look forward to 😥\nCreate an event or check out the Discover tab!")
+                .bold()
+                .multilineTextAlignment(.center)
+                .padding()
+        } else {
+           
+        }
+        }
+        
+
             .navigationTitle("Upcoming")
             .toolbar {
                 Button {
@@ -35,9 +49,16 @@ struct UpcomingView: View {
 
 struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            UpcomingView()
-        }
         
+        Group {
+            NavigationView {
+                UpcomingView(hypedEvent: [testHypedEvent1, testHypedEvent2])
+            }
+            
+            NavigationView {
+                UpcomingView(hypedEvent: [])
+            }
+        }
+      
     }
 }

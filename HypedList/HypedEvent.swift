@@ -27,3 +27,31 @@ class HypedEvent: ObservableObject {
     }
     
 }
+
+
+var testHypedEvent1: HypedEvent {
+    let hypedEvent = HypedEvent()
+    
+    if let image = UIImage(named: "wwdc") {
+        if let  data = image.pngData() {
+            hypedEvent.imageDate = data
+        }
+    }
+    
+    hypedEvent.title = "WWDC 2021"
+    hypedEvent.color = .green
+    hypedEvent.date = Date()
+    hypedEvent.url = "apple.com"
+    
+    return hypedEvent
+}
+
+var testHypedEvent2: HypedEvent {
+    let hypedEvent = HypedEvent()
+
+    hypedEvent.title = "Family Trip to Jackson"
+    hypedEvent.color = .blue
+    hypedEvent.date = Date()
+    
+    return hypedEvent
+}
