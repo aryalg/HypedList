@@ -10,7 +10,7 @@ import SwiftUI
 struct UpcomingView: View {
     
     @State var showingCreateView = false
-    var hypedEvents: [HypedEvent] = []
+    var hypedEvents: [HypedEvent] = [testHypedEvent1, testHypedEvent2]
     
     
     
@@ -28,7 +28,7 @@ struct UpcomingView: View {
         } else {
             ForEach(hypedEvents) { hypedEvent in
                 
-                Text(hypedEvent.title)
+                HypedEventTileView(hypedEvent: hypedEvent)
             
             }
            
@@ -60,7 +60,7 @@ struct UpcomingView_Previews: PreviewProvider {
         
         Group {
             NavigationView {
-                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,])
+                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
             }
             
             NavigationView {
