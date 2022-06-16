@@ -95,6 +95,11 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
         return date.toRelative()
     }
     
+    
+    func validURL () -> URL? {
+        return URL(string: url)
+    }
+    
 }
 
 
