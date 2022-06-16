@@ -10,7 +10,7 @@ import SwiftUI
 struct UpcomingView: View {
     
     @State var showingCreateView = false
-    var hypedEvents: [HypedEvent] = [testHypedEvent1, testHypedEvent2]
+    @ObservedObject var data = DataController.shared
     
     
     
@@ -20,13 +20,13 @@ struct UpcomingView: View {
         ScrollView {
         
         VStack {
-        if hypedEvents.isEmpty {
+            if data.hypedEvents.isEmpty {
             Text("Nothing to look forward to 😥\nCreate an event or check out the Discover tab!")
                 .bold()
                 .multilineTextAlignment(.center)
                 .padding()
         } else {
-            ForEach(hypedEvents) { hypedEvent in
+            ForEach(data.hypedEvents) { hypedEvent in
                 
                 HypedEventTileView(hypedEvent: hypedEvent)
             
@@ -59,13 +59,13 @@ struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
         
         Group {
-            NavigationView {
-                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
-            }
-            
-            NavigationView {
-                UpcomingView(hypedEvents: [])
-            }
+//            NavigationView {
+//                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
+//            }
+//
+//            NavigationView {
+//                UpcomingView()
+//            }
         }
       
     }

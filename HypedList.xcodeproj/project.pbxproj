@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		046AA0D7285B82B4009107C3 /* HypedEventTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0D6285B82B4009107C3 /* HypedEventTileView.swift */; };
+		046AA0DA285B8FD8009107C3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 046AA0D9285B8FD8009107C3 /* SwiftDate */; };
+		046AA0DC285B92EA009107C3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0DB285B92EA009107C3 /* DataController.swift */; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		046AA0D6285B82B4009107C3 /* HypedEventTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTileView.swift; sourceTree = "<group>"; };
+		046AA0DB285B92EA009107C3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		04B5209328577D5F00AD7C64 /* HypedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046AA0DA285B8FD8009107C3 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +83,7 @@
 				04B520AC2857835700AD7C64 /* HypedEvent.swift */,
 				04B520B028578B9200AD7C64 /* ImagePicker.swift */,
 				046AA0D6285B82B4009107C3 /* HypedEventTileView.swift */,
+				046AA0DB285B92EA009107C3 /* DataController.swift */,
 			);
 			path = HypedList;
 			sourceTree = "<group>";
@@ -107,6 +112,9 @@
 			dependencies = (
 			);
 			name = HypedList;
+			packageProductDependencies = (
+				046AA0D9285B8FD8009107C3 /* SwiftDate */,
+			);
 			productName = HypedList;
 			productReference = 04B5209328577D5F00AD7C64 /* HypedList.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +143,9 @@
 				Base,
 			);
 			mainGroup = 04B5208A28577D5F00AD7C64;
+			packageReferences = (
+				046AA0D8285B8FD8009107C3 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+			);
 			productRefGroup = 04B5209428577D5F00AD7C64 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,6 +177,7 @@
 				04B520AB285782E800AD7C64 /* CreateHypedEventView.swift in Sources */,
 				04B520B128578B9200AD7C64 /* ImagePicker.swift in Sources */,
 				04B520A928577F1300AD7C64 /* DiscoverView.swift in Sources */,
+				046AA0DC285B92EA009107C3 /* DataController.swift in Sources */,
 				04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */,
 				04B520AF285787E500AD7C64 /* FormLabelView.swift in Sources */,
 				04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */,
@@ -371,6 +383,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		046AA0D8285B8FD8009107C3 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		046AA0D9285B8FD8009107C3 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046AA0D8285B8FD8009107C3 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04B5208B28577D5F00AD7C64 /* Project object */;
 }

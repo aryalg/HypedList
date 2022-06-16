@@ -28,15 +28,15 @@ struct HypedEventTileView: View {
                     .padding(10)
                 Spacer()
             }
-            .background(.white)
+//            .background(.white)
             
             HStack {
                 Image(systemName: "calendar")
                     .foregroundColor(.red)
-                Text("SEP 4")
+                Text(hypedEvent.dateAsString())
                     
                 Spacer()
-                Text("Next Month")
+                Text(hypedEvent.timeFromNow())
                 Image(systemName: "clock.fill")
                     .foregroundColor(.blue)
                 
@@ -44,7 +44,7 @@ struct HypedEventTileView: View {
             .font(.title3)
             .padding(.horizontal, 10)
             .padding(.bottom, 10)
-            .background(.white)
+//            .background(.white)
             
             
         }
@@ -52,7 +52,7 @@ struct HypedEventTileView: View {
         .cornerRadius(10)
         .shadow(radius: 10)
         .padding()
-        .background(.white)
+//        .background(.white)
     }
 }
 

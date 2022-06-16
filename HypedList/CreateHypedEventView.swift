@@ -9,12 +9,16 @@ import SwiftUI
 
 struct CreateHypedEventView: View {
     
+    @Environment(\.dismiss) var dismiss
     @StateObject var hypedEvent = HypedEvent()
     @State var showTime = false
     @State var showImagePicker = false
     
     
     var body: some View {
+        
+        NavigationView {
+        
         Form {
            
             
@@ -95,6 +99,20 @@ struct CreateHypedEventView: View {
           
             
            
+        }
+        .navigationBarItems(leading: Button(action: {
+            dismiss()
+        }){
+            Text("Cancel")
+            
+        }, trailing: Button(action: {
+            DataController.shared.hypedEvents.append(hypedEvent)
+            dismiss()
+        }){
+            Text("Done")
+            
+        })
+        .navigationTitle("Create")
         }
     }
 }
