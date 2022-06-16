@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct DiscoverView: View {
+    
+    @ObservedObject var data = DataController.shared
+    
     var body: some View {
-        Text("Discover View")
+        HypedEventListView(hypedEvents: data.discoverHypedEvents.sorted { $0.date < $1.date}, noEventText: "Loading awesome stuff for ya!")
+        
+
+            .navigationTitle("Discover")
     }
 }
 
