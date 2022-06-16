@@ -12,6 +12,7 @@
 		046AA0DC285B92EA009107C3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0DB285B92EA009107C3 /* DataController.swift */; };
 		046AA0E1285BA69C009107C3 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 046AA0E0285BA69C009107C3 /* UIColorHexSwift */; };
 		046AA0E3285BAD3E009107C3 /* HypedEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0E2285BAD3E009107C3 /* HypedEventListView.swift */; };
+		046AA0E5285BE0B3009107C3 /* HypedEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0E4285BE0B3009107C3 /* HypedEventDetailView.swift */; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		046AA0D6285B82B4009107C3 /* HypedEventTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTileView.swift; sourceTree = "<group>"; };
 		046AA0DB285B92EA009107C3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		046AA0E2285BAD3E009107C3 /* HypedEventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventListView.swift; sourceTree = "<group>"; };
+		046AA0E4285BE0B3009107C3 /* HypedEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventDetailView.swift; sourceTree = "<group>"; };
 		04B5209328577D5F00AD7C64 /* HypedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				046AA0E2285BAD3E009107C3 /* HypedEventListView.swift */,
 				04B520B028578B9200AD7C64 /* ImagePicker.swift */,
 				04B520AE285787E500AD7C64 /* FormLabelView.swift */,
+				046AA0E4285BE0B3009107C3 /* HypedEventDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				046AA0E3285BAD3E009107C3 /* HypedEventListView.swift in Sources */,
 				04B520AB285782E800AD7C64 /* CreateHypedEventView.swift in Sources */,
 				04B520B128578B9200AD7C64 /* ImagePicker.swift in Sources */,
+				046AA0E5285BE0B3009107C3 /* HypedEventDetailView.swift in Sources */,
 				04B520A928577F1300AD7C64 /* DiscoverView.swift in Sources */,
 				046AA0DC285B92EA009107C3 /* DataController.swift in Sources */,
 				04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */,
