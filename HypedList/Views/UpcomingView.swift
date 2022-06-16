@@ -17,24 +17,7 @@ struct UpcomingView: View {
     
     var body: some View {
         
-        ScrollView {
-        
-        VStack {
-            if data.hypedEvents.isEmpty {
-            Text("Nothing to look forward to 😥\nCreate an event or check out the Discover tab!")
-                .bold()
-                .multilineTextAlignment(.center)
-                .padding()
-        } else {
-            ForEach(data.hypedEvents) { hypedEvent in
-                
-                HypedEventTileView(hypedEvent: hypedEvent)
-            
-            }
-           
-        }
-        }
-        }
+        HypedEventListView(hypedEvents: data.upcomingHypedEvent, noEventText: "Nothing to look forward to 😥\nCreate an event or check out the Discover tab!")
         
 
             .navigationTitle("Upcoming")
@@ -63,9 +46,9 @@ struct UpcomingView_Previews: PreviewProvider {
 //                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
 //            }
 //
-//            NavigationView {
-//                UpcomingView()
-//            }
+            NavigationView {
+                UpcomingView()
+            }
         }
       
     }

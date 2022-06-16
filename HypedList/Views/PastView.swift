@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct PastView: View {
+    @ObservedObject var data = DataController.shared
+    
+    
     var body: some View {
-        Text("Past View")
+        HypedEventListView(hypedEvents: data.pastHypedEvent, noEventText: "No events have passed yet, you should add some more thing!")
+        
+
+            .navigationTitle("Past")
     }
 }
 
