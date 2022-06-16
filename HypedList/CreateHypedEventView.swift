@@ -16,6 +16,8 @@ struct CreateHypedEventView: View {
     
     var body: some View {
         Form {
+           
+            
             Section {
                 FormLabelView(title: "Title", iconSystemName: "keyboard", color: .red)
                 TextField("Family Vacation", text: $hypedEvent.title)
@@ -32,13 +34,46 @@ struct CreateHypedEventView: View {
                 }
             }
             
-            Button(action: {
-                showImagePicker = true
-            }) {
-                Text("Pick  Image")
-            }
-            .sheet(isPresented: $showImagePicker) {
-                ImagePicker()
+            Section {
+                if hypedEvent.image() != nil {
+                    HStack {
+                        FormLabelView(title: "Image", iconSystemName: "camera", color: .purple)
+                        Spacer()
+                        Button(action: {
+                            hypedEvent.imageDate =  nil
+                        }) {
+                            Text("Remove Image")
+                                .foregroundColor(.red)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                } else {
+                HStack {
+                    FormLabelView(title: "Image", iconSystemName: "camera", color: .purple)
+                    Spacer()
+                    Button(action: {
+                        showImagePicker = true
+                    }) {
+                        Text("Pick  Image")
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    .sheet(isPresented: $showImagePicker) {
+                        ImagePicker(imageData: $hypedEvent.imageDate)
+                    }
+                }
+                }
+                
+                if hypedEvent.image() != nil {
+                    Button(action: {
+                        showImagePicker = true
+                    }) {
+                        hypedEvent.image()!.resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    
+                    
+                }
             }
             
             Section {

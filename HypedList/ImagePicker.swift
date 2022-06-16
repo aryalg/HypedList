@@ -10,6 +10,9 @@ import UIKit
 
 struct ImagePicker: UIViewControllerRepresentable {
     
+    @Environment(\.dismiss) var dismiss
+    @Binding var imageData: Data?
+    
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -37,8 +40,10 @@ struct ImagePicker: UIViewControllerRepresentable {
             
             if let image = info[.originalImage] as? UIImage {
                 // Do Something with Image
-                image.pngData()
+                parent.imageData = image.pngData()
             }
+            
+            parent.dismiss()
         }
     }
 }
