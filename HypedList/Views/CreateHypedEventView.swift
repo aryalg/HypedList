@@ -107,6 +107,7 @@ struct CreateHypedEventView: View {
             
         }, trailing: Button(action: {
             DataController.shared.hypedEvents.append(hypedEvent)
+            DataController.shared.savedData()
             dismiss()
         }){
             Text("Done")

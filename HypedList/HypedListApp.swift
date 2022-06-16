@@ -12,6 +12,10 @@ struct HypedListApp: App {
     var body: some Scene {
         WindowGroup {
             HypedListTabView()
+                .onAppear {
+                    DataController.shared.loadData()
+                }
         }
+        
     }
 }
