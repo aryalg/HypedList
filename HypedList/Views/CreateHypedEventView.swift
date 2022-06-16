@@ -44,7 +44,7 @@ struct CreateHypedEventView: View {
                         FormLabelView(title: "Image", iconSystemName: "camera", color: .purple)
                         Spacer()
                         Button(action: {
-                            hypedEvent.imageDate =  nil
+                            hypedEvent.imageData =  nil
                         }) {
                             Text("Remove Image")
                                 .foregroundColor(.red)
@@ -62,7 +62,7 @@ struct CreateHypedEventView: View {
                     }
                     .buttonStyle(BorderlessButtonStyle())
                     .sheet(isPresented: $showImagePicker) {
-                        ImagePicker(imageData: $hypedEvent.imageDate)
+                        ImagePicker(imageData: $hypedEvent.imageData)
                     }
                 }
                 }
