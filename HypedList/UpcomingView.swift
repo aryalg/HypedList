@@ -10,21 +10,29 @@ import SwiftUI
 struct UpcomingView: View {
     
     @State var showingCreateView = false
-    var hypedEvent: [HypedEvent] = []
+    var hypedEvents: [HypedEvent] = []
     
     
     
     
     var body: some View {
         
+        ScrollView {
+        
         VStack {
-        if hypedEvent.isEmpty {
+        if hypedEvents.isEmpty {
             Text("Nothing to look forward to 😥\nCreate an event or check out the Discover tab!")
                 .bold()
                 .multilineTextAlignment(.center)
                 .padding()
         } else {
+            ForEach(hypedEvents) { hypedEvent in
+                
+                Text(hypedEvent.title)
+            
+            }
            
+        }
         }
         }
         
@@ -52,11 +60,11 @@ struct UpcomingView_Previews: PreviewProvider {
         
         Group {
             NavigationView {
-                UpcomingView(hypedEvent: [testHypedEvent1, testHypedEvent2])
+                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,testHypedEvent1, testHypedEvent2,])
             }
             
             NavigationView {
-                UpcomingView(hypedEvent: [])
+                UpcomingView(hypedEvents: [])
             }
         }
       
