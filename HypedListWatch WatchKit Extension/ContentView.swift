@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    @ObservedObject var data = WatchToPhoneDataController.shared
+    
     var body: some View {
-        Text("Hello, World!")
+        HypedEventWatchListView(hypedEvents: data.hypedEvents)
             .padding()
             .foregroundColor(.blue)
     }

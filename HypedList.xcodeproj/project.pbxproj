@@ -38,6 +38,7 @@
 		04ABCE5C285D025B00DDADFB /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04ABCE5B285D025B00DDADFB /* UIColorHexSwift */; };
 		04ABCE5F285D088C00DDADFB /* PhoneToWatchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */; };
 		04ABCE60285D0CC100DDADFB /* PhoneToWatchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */; };
+		04ABCE62285D104400DDADFB /* WatchToPhoneDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE61285D104400DDADFB /* WatchToPhoneDataController.swift */; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -137,6 +138,7 @@
 		04ABCE4A285D00FB00DDADFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04ABCE56285D01FA00DDADFB /* HypedEventWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventWatchListView.swift; sourceTree = "<group>"; };
 		04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneToWatchDataController.swift; sourceTree = "<group>"; };
+		04ABCE61285D104400DDADFB /* WatchToPhoneDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchToPhoneDataController.swift; sourceTree = "<group>"; };
 		04B5209328577D5F00AD7C64 /* Hyped List App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyped List App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				04ABCE4A285D00FB00DDADFB /* Info.plist */,
 				04ABCE47285D00FB00DDADFB /* Preview Content */,
 				04ABCE56285D01FA00DDADFB /* HypedEventWatchListView.swift */,
+				04ABCE61285D104400DDADFB /* WatchToPhoneDataController.swift */,
 			);
 			path = "HypedListWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04ABCE62285D104400DDADFB /* WatchToPhoneDataController.swift in Sources */,
 				04ABCE42285D00FB00DDADFB /* HypedListApp.swift in Sources */,
 				04ABCE58285D021A00DDADFB /* HypedEvent.swift in Sources */,
 				04ABCE40285D00FB00DDADFB /* ContentView.swift in Sources */,
@@ -850,7 +854,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -882,7 +886,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

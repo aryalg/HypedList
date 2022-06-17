@@ -41,7 +41,7 @@ class DataController: ObservableObject {
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
-            PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.upcomingHypedEvent))
+            PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.hypedEvents))
         }
     }
     
@@ -82,7 +82,7 @@ class DataController: ObservableObject {
                 if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
                     DispatchQueue.main.async {
                         self.hypedEvents = savedHypedEvent
-                        PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.upcomingHypedEvent))
+                        PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.hypedEvents))
                     }
                    
                 }
