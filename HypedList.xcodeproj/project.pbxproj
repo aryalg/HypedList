@@ -70,6 +70,8 @@
 		046AA0F1285C97DA009107C3 /* HypedListiOSWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListiOSWidget.swift; sourceTree = "<group>"; };
 		046AA0F3285C97DC009107C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046AA0F5285C97DC009107C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04ABCE2A285CA46700DDADFB /* HypedListiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HypedListiOS.entitlements; sourceTree = "<group>"; };
+		04ABCE2B285CA4C400DDADFB /* HypedListiOSWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HypedListiOSWidgetExtension.entitlements; sourceTree = "<group>"; };
 		04B5209328577D5F00AD7C64 /* HypedListiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedListiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,8 @@
 		04B5208A28577D5F00AD7C64 = {
 			isa = PBXGroup;
 			children = (
+				04ABCE2B285CA4C400DDADFB /* HypedListiOSWidgetExtension.entitlements */,
+				04ABCE2A285CA46700DDADFB /* HypedListiOS.entitlements */,
 				04B5209528577D5F00AD7C64 /* HypedList */,
 				046AA0F0285C97DA009107C3 /* HypedListiOSWidget */,
 				046AA0EB285C97DA009107C3 /* Frameworks */,
@@ -347,6 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HypedListiOSWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RT32ZWV93X;
@@ -375,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HypedListiOSWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RT32ZWV93X;
@@ -518,6 +524,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HypedListiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HypedList/Preview Content\"";
@@ -548,6 +555,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HypedListiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HypedList/Preview Content\"";

@@ -10,22 +10,42 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> HypedEventEntry {
-        HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
+        
+        
+        let placeholderHypedEvent = HypedEvent()
+        placeholderHypedEvent.color = .green
+        placeholderHypedEvent.title = "Loading..."
+        
+        
+        
+        return HypedEventEntry(date: Date(), hypedEvent: placeholderHypedEvent)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (HypedEventEntry) -> ()) {
-        let entry = HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
+        
+        let upcoming = DataController.shared.getUpcomingForWidget()
+        
+        var entry = HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
+        
+        if(upcoming.count > 0) {
+            entry = HypedEventEntry(date: Date(), hypedEvent: upcoming.randomElement())
+        }
+        
+        
+        
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [HypedEventEntry] = []
+        
+        let upcoming = DataController.shared.getUpcomingForWidget()
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
+        for hourOffset in 0 ..< upcoming.count {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = HypedEventEntry(date: entryDate, hypedEvent: testHypedEvent1)
+            let entry = HypedEventEntry(date: entryDate, hypedEvent: upcoming[hourOffset])
             entries.append(entry)
         }
 
@@ -62,7 +82,7 @@ struct HypedListiOSWidgetEntryView : View {
                 entry.hypedEvent?.color
             }
                 
-                Color.black.opacity(0.1)
+                Color.black.opacity(0.2)
                 
                 Text(entry.hypedEvent!.title)
                     .foregroundColor(.white)

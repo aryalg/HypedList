@@ -10,6 +10,7 @@ import SwiftDate
 import UIKit
 import UIColorHexSwift
 import SwiftUI
+import WidgetKit
 
 
 class DataController: ObservableObject {
@@ -32,11 +33,14 @@ class DataController: ObservableObject {
     
     func savedData() {
         DispatchQueue.global().async {
+            if let defaults = UserDefaults(suiteName: "group.au.com.bitpointx.HypedList") {
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(self.hypedEvents) {
-                UserDefaults.standard.setValue(encoded, forKey: "hypedEvents")
-                UserDefaults.standard.synchronize()
+                defaults.setValue(encoded, forKey: "hypedEvents")
+                defaults.synchronize()
+                WidgetCenter.shared.reloadAllTimelines()
             }
+        }
         }
     }
     
@@ -71,7 +75,8 @@ class DataController: ObservableObject {
     
     func loadData() {
         DispatchQueue.global().async {
-            if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
+            if let defaults = UserDefaults(suiteName: "group.au.com.bitpointx.HypedList") {
+            if let data = defaults.data(forKey: "hypedEvents") {
                 let decoder = JSONDecoder()
                 if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
                     DispatchQueue.main.async {
@@ -80,8 +85,27 @@ class DataController: ObservableObject {
                    
                 }
             }
+            }
             
         }
+    }
+    
+    func getUpcomingForWidget() -> [HypedEvent] {
+        if let defaults = UserDefaults(suiteName: "group.au.com.bitpointx.HypedList") {
+        if let data = defaults.data(forKey: "hypedEvents") {
+            let decoder = JSONDecoder()
+            if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
+                
+                return savedHypedEvent;
+                
+               
+            }
+        }
+        }
+        
+        return []
+     
+
     }
     
     func getDiscoverEvents() {
