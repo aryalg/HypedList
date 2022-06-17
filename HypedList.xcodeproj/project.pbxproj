@@ -13,6 +13,11 @@
 		046AA0E1285BA69C009107C3 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 046AA0E0285BA69C009107C3 /* UIColorHexSwift */; };
 		046AA0E3285BAD3E009107C3 /* HypedEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0E2285BAD3E009107C3 /* HypedEventListView.swift */; };
 		046AA0E5285BE0B3009107C3 /* HypedEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0E4285BE0B3009107C3 /* HypedEventDetailView.swift */; };
+		046AA0ED285C97DA009107C3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AA0EC285C97DA009107C3 /* WidgetKit.framework */; };
+		046AA0EF285C97DA009107C3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AA0EE285C97DA009107C3 /* SwiftUI.framework */; };
+		046AA0F2285C97DA009107C3 /* HypedListiOSWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0F1285C97DA009107C3 /* HypedListiOSWidget.swift */; };
+		046AA0F4285C97DC009107C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046AA0F3285C97DC009107C3 /* Assets.xcassets */; };
+		046AA0F8285C97DC009107C3 /* HypedListiOSWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -26,12 +31,42 @@
 		04B520B128578B9200AD7C64 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520B028578B9200AD7C64 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		046AA0F6285C97DC009107C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04B5208B28577D5F00AD7C64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046AA0E9285C97DA009107C3;
+			remoteInfo = HypedListiOSWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		046AA0FC285C97DC009107C3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				046AA0F8285C97DC009107C3 /* HypedListiOSWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		046AA0D6285B82B4009107C3 /* HypedEventTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTileView.swift; sourceTree = "<group>"; };
 		046AA0DB285B92EA009107C3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		046AA0E2285BAD3E009107C3 /* HypedEventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventListView.swift; sourceTree = "<group>"; };
 		046AA0E4285BE0B3009107C3 /* HypedEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventDetailView.swift; sourceTree = "<group>"; };
-		04B5209328577D5F00AD7C64 /* HypedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HypedListiOSWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		046AA0EC285C97DA009107C3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		046AA0EE285C97DA009107C3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		046AA0F1285C97DA009107C3 /* HypedListiOSWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListiOSWidget.swift; sourceTree = "<group>"; };
+		046AA0F3285C97DC009107C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		046AA0F5285C97DC009107C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B5209328577D5F00AD7C64 /* HypedListiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedListiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
 		04B5209A28577D6200AD7C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +81,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		046AA0E7285C97DA009107C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046AA0EF285C97DA009107C3 /* SwiftUI.framework in Frameworks */,
+				046AA0ED285C97DA009107C3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04B5209028577D5F00AD7C64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,10 +127,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		046AA0EB285C97DA009107C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				046AA0EC285C97DA009107C3 /* WidgetKit.framework */,
+				046AA0EE285C97DA009107C3 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		046AA0F0285C97DA009107C3 /* HypedListiOSWidget */ = {
+			isa = PBXGroup;
+			children = (
+				046AA0F1285C97DA009107C3 /* HypedListiOSWidget.swift */,
+				046AA0F3285C97DC009107C3 /* Assets.xcassets */,
+				046AA0F5285C97DC009107C3 /* Info.plist */,
+			);
+			path = HypedListiOSWidget;
+			sourceTree = "<group>";
+		};
 		04B5208A28577D5F00AD7C64 = {
 			isa = PBXGroup;
 			children = (
 				04B5209528577D5F00AD7C64 /* HypedList */,
+				046AA0F0285C97DA009107C3 /* HypedListiOSWidget */,
+				046AA0EB285C97DA009107C3 /* Frameworks */,
 				04B5209428577D5F00AD7C64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +159,8 @@
 		04B5209428577D5F00AD7C64 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04B5209328577D5F00AD7C64 /* HypedList.app */,
+				04B5209328577D5F00AD7C64 /* HypedListiOS.app */,
+				046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,25 +189,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04B5209228577D5F00AD7C64 /* HypedList */ = {
+		046AA0E9285C97DA009107C3 /* HypedListiOSWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B520A128577D6200AD7C64 /* Build configuration list for PBXNativeTarget "HypedList" */;
+			buildConfigurationList = 046AA0F9285C97DC009107C3 /* Build configuration list for PBXNativeTarget "HypedListiOSWidgetExtension" */;
 			buildPhases = (
-				04B5208F28577D5F00AD7C64 /* Sources */,
-				04B5209028577D5F00AD7C64 /* Frameworks */,
-				04B5209128577D5F00AD7C64 /* Resources */,
+				046AA0E6285C97DA009107C3 /* Sources */,
+				046AA0E7285C97DA009107C3 /* Frameworks */,
+				046AA0E8285C97DA009107C3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HypedList;
+			name = HypedListiOSWidgetExtension;
+			productName = HypedListiOSWidgetExtension;
+			productReference = 046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		04B5209228577D5F00AD7C64 /* HypedListiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B520A128577D6200AD7C64 /* Build configuration list for PBXNativeTarget "HypedListiOS" */;
+			buildPhases = (
+				04B5208F28577D5F00AD7C64 /* Sources */,
+				04B5209028577D5F00AD7C64 /* Frameworks */,
+				04B5209128577D5F00AD7C64 /* Resources */,
+				046AA0FC285C97DC009107C3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				046AA0F7285C97DC009107C3 /* PBXTargetDependency */,
+			);
+			name = HypedListiOS;
 			packageProductDependencies = (
 				046AA0D9285B8FD8009107C3 /* SwiftDate */,
 				046AA0E0285BA69C009107C3 /* UIColorHexSwift */,
 			);
 			productName = HypedList;
-			productReference = 04B5209328577D5F00AD7C64 /* HypedList.app */;
+			productReference = 04B5209328577D5F00AD7C64 /* HypedListiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -151,9 +236,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					046AA0E9285C97DA009107C3 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					04B5209228577D5F00AD7C64 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -176,12 +264,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04B5209228577D5F00AD7C64 /* HypedList */,
+				04B5209228577D5F00AD7C64 /* HypedListiOS */,
+				046AA0E9285C97DA009107C3 /* HypedListiOSWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		046AA0E8285C97DA009107C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046AA0F4285C97DC009107C3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04B5209128577D5F00AD7C64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +291,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		046AA0E6285C97DA009107C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046AA0F2285C97DA009107C3 /* HypedListiOSWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04B5208F28577D5F00AD7C64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,7 +321,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		046AA0F7285C97DC009107C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046AA0E9285C97DA009107C3 /* HypedListiOSWidgetExtension */;
+			targetProxy = 046AA0F6285C97DC009107C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		046AA0FA285C97DC009107C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RT32ZWV93X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HypedListiOSWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HypedListiOSWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedList.HypedListiOSWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		046AA0FB285C97DC009107C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RT32ZWV93X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HypedListiOSWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HypedListiOSWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedList.HypedListiOSWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		04B5209F28577D6200AD7C64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -334,6 +503,7 @@
 		04B520A228577D6200AD7C64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -363,6 +533,7 @@
 		04B520A328577D6200AD7C64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +563,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		046AA0F9285C97DC009107C3 /* Build configuration list for PBXNativeTarget "HypedListiOSWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046AA0FA285C97DC009107C3 /* Debug */,
+				046AA0FB285C97DC009107C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04B5208E28577D5F00AD7C64 /* Build configuration list for PBXProject "HypedList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -401,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B520A128577D6200AD7C64 /* Build configuration list for PBXNativeTarget "HypedList" */ = {
+		04B520A128577D6200AD7C64 /* Build configuration list for PBXNativeTarget "HypedListiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B520A228577D6200AD7C64 /* Debug */,
