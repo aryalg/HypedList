@@ -25,12 +25,30 @@ class WatchToPhoneDataController: NSObject, WCSessionDelegate, ObservableObject 
         
         session.delegate = self
         session.activate()
+        
+        
+        DispatchQueue.global().async {
+            if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
+                let decoder = JSONDecoder()
+                if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
+                    DispatchQueue.main.async {
+                        self.hypedEvents = savedHypedEvent
+                      
+                    }
+                   
+                }
+            
+            }
+            
+        }
+
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         switch activationState {
         case .activated:
             print("activated from watch")
+            sendMessage()
          default:
             print("not able to talk to watch :(")
         }
@@ -52,10 +70,30 @@ class WatchToPhoneDataController: NSObject, WCSessionDelegate, ObservableObject 
             if let decodedHypedData = try? decoder.decode([HypedEvent].self, from: hypedData) {
                 DispatchQueue.main.async {
                     self.hypedEvents = decodedHypedData
+                    
+                    DispatchQueue.global().async {
+                        
+                        let encoder = JSONEncoder()
+                        if let encoded = try? encoder.encode(self.hypedEvents) {
+                            UserDefaults.standard.setValue(encoded, forKey: "hypedEvents")
+                            UserDefaults.standard.synchronize()
+                            
+                        }
+                    
+                    }
                 }
                
                 
             }
+        }
+    }
+    
+    
+    func sendMessage() {
+        session.sendMessage(["I want":"Data"]) { (context) in
+            self.decodeContext(context: context)
+        } errorHandler: { (error) in
+            print(error)
         }
     }
     

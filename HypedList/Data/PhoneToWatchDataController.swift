@@ -64,5 +64,22 @@ class PhoneToWatchDataController: NSObject, WCSessionDelegate {
         return ["failed": 0]
     }
     
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if let defaults = UserDefaults(suiteName: "group.au.com.bitpointx.HypedList") {
+        if let data = defaults.data(forKey: "hypedEvents") {
+            let decoder = JSONDecoder()
+            if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
+                DispatchQueue.main.async {
+                    replyHandler(self.convertHypedEventsToContext(hypedEvents: savedHypedEvent))
+                }
+               
+            }
+        }
+        }
+        
+        
+        
+    }
+    
     
 }
