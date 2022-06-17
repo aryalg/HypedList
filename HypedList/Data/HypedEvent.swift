@@ -63,6 +63,18 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
         
     }
     
+    var hasBeenAdded: Bool {
+        let hypedEvent =  DataController.shared.hypedEvents.first {  event -> Bool in
+            return event.id == self.id
+        }
+        
+        if hypedEvent != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     
     
     func image() -> Image? {

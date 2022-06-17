@@ -40,6 +40,13 @@ class DataController: ObservableObject {
         }
     }
     
+    
+    func addFromDiscover(hypedEvent: HypedEvent) {
+        hypedEvents.append(hypedEvent)
+        hypedEvent.objectWillChange.send()
+        savedData()
+    }
+    
     func loadData() {
         DispatchQueue.global().async {
             if let data = UserDefaults.standard.data(forKey: "hypedEvents") {

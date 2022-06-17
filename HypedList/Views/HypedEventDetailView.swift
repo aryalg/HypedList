@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HypedEventDetailView: View {
     
-    var hypedEvent: HypedEvent
+    @ObservedObject var hypedEvent: HypedEvent
     var isDiscover = false
     
     var body: some View {
@@ -38,7 +38,9 @@ struct HypedEventDetailView: View {
             
            
             if(hypedEvent.validURL() != nil) {
-                Button(action: {}) {
+                Button(action: {
+                    UIApplication.shared.open(hypedEvent.validURL()!)
+                }) {
                 HypedEventDetailViewButton(backgroundColor: .orange, imageName: "link", text: "Visit Site")
                 }.padding(.bottom, 10)
                 
@@ -56,9 +58,13 @@ struct HypedEventDetailView: View {
             
             
             if(isDiscover) {
-                Button(action: {}) {
-                HypedEventDetailViewButton(backgroundColor: .blue, imageName: "plus.circle", text: "Add")
+                Button(action: {
+                    DataController.shared.addFromDiscover(hypedEvent: hypedEvent)
+                }) {
+                    HypedEventDetailViewButton(backgroundColor: .blue, imageName: "plus.circle", text: hypedEvent.hasBeenAdded ? "Added" : "Add")
                 }
+                .disabled(hypedEvent.hasBeenAdded)
+                .opacity(hypedEvent.hasBeenAdded ? 0.5 : 1.0)
             }
             
             
@@ -74,6 +80,7 @@ struct HypedEventDetailView: View {
  
 
         }
+        .navigationBarTitleDisplayMode(.inline)
     
     }
 }

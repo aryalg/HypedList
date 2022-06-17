@@ -12,7 +12,7 @@ struct DiscoverView: View {
     @ObservedObject var data = DataController.shared
     
     var body: some View {
-        HypedEventListView(hypedEvents: data.discoverHypedEvents.sorted { $0.date < $1.date}, noEventText: "Loading awesome stuff for ya!")
+        HypedEventListView(hypedEvents: data.discoverHypedEvents.sorted { $0.date < $1.date}, noEventText: "Loading awesome stuff for ya!", isDiscover: true)
         
 
             .navigationTitle("Discover")
