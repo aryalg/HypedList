@@ -62,7 +62,7 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
     init(){
         
     }
-    
+    #if !os(watchOS)
     var hasBeenAdded: Bool {
         let hypedEvent =  DataController.shared.hypedEvents.first {  event -> Bool in
             return event.id == self.id
@@ -74,6 +74,7 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
             return false
         }
     }
+    #endif
     
     
     
