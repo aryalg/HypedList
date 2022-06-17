@@ -31,11 +31,13 @@
 		04ABCE44285D00FB00DDADFB /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE43285D00FB00DDADFB /* ComplicationController.swift */; };
 		04ABCE46285D00FB00DDADFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ABCE45285D00FB00DDADFB /* Assets.xcassets */; };
 		04ABCE49285D00FB00DDADFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ABCE48285D00FB00DDADFB /* Preview Assets.xcassets */; };
-		04ABCE4D285D00FB00DDADFB /* HypedListWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04ABCE32285D00F900DDADFB /* HypedListWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04ABCE4D285D00FB00DDADFB /* Hyped List Watch Extension.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04ABCE32285D00F900DDADFB /* Hyped List Watch Extension.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04ABCE57285D01FA00DDADFB /* HypedEventWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE56285D01FA00DDADFB /* HypedEventWatchListView.swift */; };
 		04ABCE58285D021A00DDADFB /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AC2857835700AD7C64 /* HypedEvent.swift */; };
 		04ABCE5A285D025B00DDADFB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 04ABCE59285D025B00DDADFB /* SwiftDate */; };
 		04ABCE5C285D025B00DDADFB /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04ABCE5B285D025B00DDADFB /* UIColorHexSwift */; };
+		04ABCE5F285D088C00DDADFB /* PhoneToWatchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */; };
+		04ABCE60285D0CC100DDADFB /* PhoneToWatchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -102,7 +104,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				04ABCE4D285D00FB00DDADFB /* HypedListWatch.app in Embed Watch Content */,
+				04ABCE4D285D00FB00DDADFB /* Hyped List Watch Extension.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,7 +126,7 @@
 		04ABCE2B285CA4C400DDADFB /* HypedListiOSWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HypedListiOSWidgetExtension.entitlements; sourceTree = "<group>"; };
 		04ABCE2C285CBFDE00DDADFB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		04ABCE2E285CC0BA00DDADFB /* HypedListSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListSidebarView.swift; sourceTree = "<group>"; };
-		04ABCE32285D00F900DDADFB /* HypedListWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedListWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04ABCE32285D00F900DDADFB /* Hyped List Watch Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyped List Watch Extension.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ABCE34285D00FA00DDADFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04ABCE3A285D00FB00DDADFB /* HypedListWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HypedListWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ABCE3F285D00FB00DDADFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,7 +136,8 @@
 		04ABCE48285D00FB00DDADFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04ABCE4A285D00FB00DDADFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04ABCE56285D01FA00DDADFB /* HypedEventWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventWatchListView.swift; sourceTree = "<group>"; };
-		04B5209328577D5F00AD7C64 /* HypedListiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedListiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneToWatchDataController.swift; sourceTree = "<group>"; };
+		04B5209328577D5F00AD7C64 /* Hyped List App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyped List App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
 		04B5209A28577D6200AD7C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 			children = (
 				04B520AC2857835700AD7C64 /* HypedEvent.swift */,
 				046AA0DB285B92EA009107C3 /* DataController.swift */,
+				04ABCE5D285D087700DDADFB /* PhoneToWatchDataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -272,9 +276,9 @@
 		04B5209428577D5F00AD7C64 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04B5209328577D5F00AD7C64 /* HypedListiOS.app */,
+				04B5209328577D5F00AD7C64 /* Hyped List App.app */,
 				046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */,
-				04ABCE32285D00F900DDADFB /* HypedListWatch.app */,
+				04ABCE32285D00F900DDADFB /* Hyped List Watch Extension.app */,
 				04ABCE3A285D00FB00DDADFB /* HypedListWatch WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -341,7 +345,7 @@
 			);
 			name = HypedListWatch;
 			productName = HypedListWatch;
-			productReference = 04ABCE32285D00F900DDADFB /* HypedListWatch.app */;
+			productReference = 04ABCE32285D00F900DDADFB /* Hyped List Watch Extension.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		04ABCE39285D00FB00DDADFB /* HypedListWatch WatchKit Extension */ = {
@@ -387,7 +391,7 @@
 				046AA0E0285BA69C009107C3 /* UIColorHexSwift */,
 			);
 			productName = HypedList;
-			productReference = 04B5209328577D5F00AD7C64 /* HypedListiOS.app */;
+			productReference = 04B5209328577D5F00AD7C64 /* Hyped List App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -483,6 +487,7 @@
 			files = (
 				046AA0F2285C97DA009107C3 /* HypedListiOSWidget.swift in Sources */,
 				046AA0FE285C9A4E009107C3 /* DataController.swift in Sources */,
+				04ABCE60285D0CC100DDADFB /* PhoneToWatchDataController.swift in Sources */,
 				046AA0FD285C99FA009107C3 /* HypedEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +518,7 @@
 				046AA0E5285BE0B3009107C3 /* HypedEventDetailView.swift in Sources */,
 				04B520A928577F1300AD7C64 /* DiscoverView.swift in Sources */,
 				046AA0DC285B92EA009107C3 /* DataController.swift in Sources */,
+				04ABCE5F285D088C00DDADFB /* PhoneToWatchDataController.swift in Sources */,
 				04B520AD2857835700AD7C64 /* HypedEvent.swift in Sources */,
 				04B520AF285787E500AD7C64 /* FormLabelView.swift in Sources */,
 				04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */,
@@ -555,7 +561,7 @@
 				INFOPLIST_FILE = HypedListiOSWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HypedListiOSWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +590,7 @@
 				INFOPLIST_FILE = HypedListiOSWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HypedListiOSWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,8 +617,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HypedListWatch WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "HypedListWatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hyped List Watch";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = HypedListWatch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -642,8 +648,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HypedListWatch WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "HypedListWatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hyped List Watch";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = HypedListWatch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,12 +679,11 @@
 				DEVELOPMENT_TEAM = RT32ZWV93X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HypedListWatch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = HypedListWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = au.com.bitpointx.HypedList;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedList.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hyped List Watch Extension";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -699,12 +704,11 @@
 				DEVELOPMENT_TEAM = RT32ZWV93X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HypedListWatch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = HypedListWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = au.com.bitpointx.HypedList;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedList.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hyped List Watch Extension";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -846,13 +850,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hyped List App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -877,13 +882,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hyped List App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
