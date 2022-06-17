@@ -36,14 +36,24 @@ struct Provider: TimelineProvider {
 
 struct HypedEventEntry: TimelineEntry {
     let date: Date
-    let hypedEvent: HypedEvent
+    let hypedEvent: HypedEvent?
 }
 
 struct HypedListiOSWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.hypedEvent.title)
+        if entry.hypedEvent != nil
+        {
+            if entry.hypedEvent!.image() != nil {
+                entry.hypedEvent!.image()
+            } else {
+                entry.hypedEvent?.color
+            }
+            
+        } else {
+            Text("No events upcoming. Tap me to add something")
+        }
     }
 }
 
@@ -62,7 +72,36 @@ struct HypedListiOSWidget: Widget {
 
 struct HypedListiOSWidget_Previews: PreviewProvider {
     static var previews: some View {
+        Group {
         HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+            
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+            
+            
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent2))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                
+                HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent2))
+                    .previewContext(WidgetPreviewContext(family: .systemMedium))
+                
+                HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent2))
+                    .previewContext(WidgetPreviewContext(family: .systemLarge))
+            
+            
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: nil))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                
+                HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: nil))
+                    .previewContext(WidgetPreviewContext(family: .systemMedium))
+                
+                HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: nil))
+                    .previewContext(WidgetPreviewContext(family: .systemLarge))
+            
+        }
     }
 }
