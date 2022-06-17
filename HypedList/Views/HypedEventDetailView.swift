@@ -11,6 +11,7 @@ struct HypedEventDetailView: View {
     
     @ObservedObject var hypedEvent: HypedEvent
     var isDiscover = false
+    @State var showingCreateView = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -49,7 +50,9 @@ struct HypedEventDetailView: View {
             
             
             if(!isDiscover) {
-                Button(action: {}) {
+                Button(action: {
+                    DataController.shared.deleteHypedEvent(hypedEvent: hypedEvent)
+                }) {
                 HypedEventDetailViewButton(backgroundColor: .red, imageName: "trash", text: "Delete")
                 }
             }
@@ -69,8 +72,13 @@ struct HypedEventDetailView: View {
             
             
             if(!isDiscover) {
-                Button(action: {}) {
+                Button(action: {
+                    showingCreateView = true
+                }) {
                     HypedEventDetailViewButton(backgroundColor: .green, imageName: "pencil.circle", text: "Edit")
+                }.sheet(isPresented: $showingCreateView) {
+                    CreateHypedEventView(hypedEvent: hypedEvent)
+                    
                 }
                 .padding(.bottom, 10)
                 

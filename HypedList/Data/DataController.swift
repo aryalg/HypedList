@@ -47,6 +47,28 @@ class DataController: ObservableObject {
         savedData()
     }
     
+    func deleteHypedEvent(hypedEvent: HypedEvent) {
+        if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool in
+            return hypedEvent.id == loopingHypedEvent.id
+        }) {
+            hypedEvents.remove(at: index)
+            savedData()
+        }
+        
+    }
+    
+    func saveHypedEvent(hypedEvent: HypedEvent) {
+        if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool in
+            return hypedEvent.id == loopingHypedEvent.id
+        }) {
+           hypedEvents[index] = hypedEvent
+          
+        } else {
+            hypedEvents.append(hypedEvent)
+        }
+        savedData()
+    }
+    
     func loadData() {
         DispatchQueue.global().async {
             if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
@@ -78,6 +100,7 @@ class DataController: ObservableObject {
                             }
                             
                             if let dateString = jsonHypedEvent["date"] {
+                                SwiftDate.defaultRegion = Region.local
                                 if let dateInRegion = dateString.toDate() {
                                     hypedEvent.date = dateInRegion.date
                                 }
