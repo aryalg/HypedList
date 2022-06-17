@@ -9,23 +9,23 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in context: Context) -> HypedEventEntry {
+        HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    func getSnapshot(in context: Context, completion: @escaping (HypedEventEntry) -> ()) {
+        let entry = HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        var entries: [HypedEventEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
+            let entry = HypedEventEntry(date: entryDate, hypedEvent: testHypedEvent1)
             entries.append(entry)
         }
 
@@ -34,15 +34,16 @@ struct Provider: TimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct HypedEventEntry: TimelineEntry {
     let date: Date
+    let hypedEvent: HypedEvent
 }
 
 struct HypedListiOSWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        Text(entry.hypedEvent.title)
     }
 }
 
@@ -61,7 +62,7 @@ struct HypedListiOSWidget: Widget {
 
 struct HypedListiOSWidget_Previews: PreviewProvider {
     static var previews: some View {
-        HypedListiOSWidgetEntryView(entry: SimpleEntry(date: Date()))
+        HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

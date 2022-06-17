@@ -18,6 +18,10 @@
 		046AA0F2285C97DA009107C3 /* HypedListiOSWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0F1285C97DA009107C3 /* HypedListiOSWidget.swift */; };
 		046AA0F4285C97DC009107C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046AA0F3285C97DC009107C3 /* Assets.xcassets */; };
 		046AA0F8285C97DC009107C3 /* HypedListiOSWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		046AA0FD285C99FA009107C3 /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AC2857835700AD7C64 /* HypedEvent.swift */; };
+		046AA0FE285C9A4E009107C3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0DB285B92EA009107C3 /* DataController.swift */; };
+		046AA100285C9A7D009107C3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 046AA0FF285C9A7D009107C3 /* SwiftDate */; };
+		046AA102285C9A7D009107C3 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 046AA101285C9A7D009107C3 /* UIColorHexSwift */; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -87,6 +91,8 @@
 			files = (
 				046AA0EF285C97DA009107C3 /* SwiftUI.framework in Frameworks */,
 				046AA0ED285C97DA009107C3 /* WidgetKit.framework in Frameworks */,
+				046AA102285C9A7D009107C3 /* UIColorHexSwift in Frameworks */,
+				046AA100285C9A7D009107C3 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +208,10 @@
 			dependencies = (
 			);
 			name = HypedListiOSWidgetExtension;
+			packageProductDependencies = (
+				046AA0FF285C9A7D009107C3 /* SwiftDate */,
+				046AA101285C9A7D009107C3 /* UIColorHexSwift */,
+			);
 			productName = HypedListiOSWidgetExtension;
 			productReference = 046AA0EA285C97DA009107C3 /* HypedListiOSWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -296,6 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				046AA0F2285C97DA009107C3 /* HypedListiOSWidget.swift in Sources */,
+				046AA0FE285C9A4E009107C3 /* DataController.swift in Sources */,
+				046AA0FD285C99FA009107C3 /* HypedEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +630,16 @@
 			productName = SwiftDate;
 		};
 		046AA0E0285BA69C009107C3 /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046AA0DF285BA69B009107C3 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
+		};
+		046AA0FF285C9A7D009107C3 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046AA0D8285B8FD8009107C3 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		046AA101285C9A7D009107C3 /* UIColorHexSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 046AA0DF285BA69B009107C3 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
 			productName = UIColorHexSwift;
