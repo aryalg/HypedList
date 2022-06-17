@@ -41,19 +41,83 @@ struct HypedEventEntry: TimelineEntry {
 
 struct HypedListiOSWidgetEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
+        
+        GeometryReader { geometry in
+        
+        
+        
         if entry.hypedEvent != nil
+            
         {
+            ZStack {
             if entry.hypedEvent!.image() != nil {
-                entry.hypedEvent!.image()
+                entry.hypedEvent!.image()!.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                
             } else {
                 entry.hypedEvent?.color
             }
+                
+                Color.black.opacity(0.1)
+                
+                Text(entry.hypedEvent!.title)
+                    .foregroundColor(.white)
+                    .font(fontSize())
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .font(fontSize())
+                
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                    Text(entry.hypedEvent!.timeFromNow())
+                            .bold()
+                            .padding(10)
+                            .foregroundColor(.white)
+                            
+                          
+                    }
+                    
+                    
+                }
+            }
             
         } else {
+            VStack(alignment: .center) {
+                Spacer()
             Text("No events upcoming. Tap me to add something")
+                .padding()
+                .multilineTextAlignment(.center)
+                
+                Spacer()
+            }
         }
+        }
+    }
+    
+    
+    func fontSize() -> Font {
+        switch widgetFamily {
+        case .systemSmall:
+            return .body
+        
+        case .systemMedium:
+            return .title2
+        
+        case .systemLarge:
+            return .title
+        case .systemExtraLarge:
+            return .largeTitle
+        
+        @unknown default:
+            return .body
+    }
     }
 }
 
