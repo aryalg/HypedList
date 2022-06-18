@@ -82,6 +82,7 @@ struct HypedEventDetailView: View {
                     }) {
                         HypedEventDetailViewButtonCompact(backgroundColor: .orange, imageName: "link", text: "Visit Site")
                     }.padding(.bottom, 10)
+                        
                     
                     
                 }
@@ -182,6 +183,7 @@ NSWorkspace.shared.open(hypedEvent.validURL()!)
                 }) {
                     HypedEventDetailViewButton(backgroundColor: .red, imageName: "trash", text: "Delete")
                 }
+                .buttonStyle(PlainButtonStyle())
             }
             
             
@@ -195,6 +197,7 @@ NSWorkspace.shared.open(hypedEvent.validURL()!)
                 }
                 .disabled(hypedEvent.hasBeenAdded)
                 .opacity(hypedEvent.hasBeenAdded ? 0.5 : 1.0)
+                .buttonStyle(PlainButtonStyle())
             }
             
             
@@ -208,6 +211,7 @@ NSWorkspace.shared.open(hypedEvent.validURL()!)
                     
                 }
                 .padding(.bottom, 10)
+                .buttonStyle(PlainButtonStyle())
                 
             }
             
@@ -276,6 +280,7 @@ struct HypedEventDetailViewButtonCompact: View {
         .cornerRadius(5)
         .padding(.horizontal, 20)
         .padding(.top, 10)
+        
         
     }
 }

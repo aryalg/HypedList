@@ -29,7 +29,50 @@ struct CreateHypedEventView: View {
         
     
     var bodyMac: some View {
-        Text("MAC OS")
+        ScrollView {
+        Form {
+           
+            
+            Section {
+                FormLabelView(title: "Title", iconSystemName: "keyboard", color: .red)
+                TextField("Family Vacation", text: $hypedEvent.title)
+                    
+            }
+            
+            Section {
+                FormLabelView(title: "Date", iconSystemName: "calendar", color: .blue)
+                DatePicker("Date", selection: $hypedEvent.date, displayedComponents: showTime ? [.date, .hourAndMinute] : [.date])
+                    .datePickerStyle(.graphical)
+                
+                Toggle(isOn: $showTime) {
+                    FormLabelView(title: "Time", iconSystemName: "clock.fill", color: .blue)
+                }
+            }
+            
+        
+            
+            Section {
+                                ColorPicker(selection: $hypedEvent.color) {
+                                    FormLabelView(title: "Color", iconSystemName: "eyedropper", color: .yellow)
+
+                }
+            }
+            
+            
+            
+            Section {
+                FormLabelView(title: "URL", iconSystemName: "link", color: .orange)
+                TextField("bitpointx.com.au", text: $hypedEvent.url)
+                    
+                    
+                    
+            }
+          
+            
+           
+        }
+            .frame(minWidth: 400, minHeight: 300)
+        }
     }
         
 #if !os(macOS)

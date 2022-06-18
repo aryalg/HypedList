@@ -35,7 +35,7 @@ struct HypedEventListView: View {
            
         }
         }
-        }
+        }.frame(minWidth: 250)
     }
 }
 
