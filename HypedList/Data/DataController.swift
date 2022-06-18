@@ -9,7 +9,9 @@ import Foundation
 import SwiftDate
 import UIColorHexSwift
 import SwiftUI
+#if !os(tvOS)
 import WidgetKit
+#endif
 
 
 class DataController: ObservableObject {
@@ -37,10 +39,12 @@ class DataController: ObservableObject {
             if let encoded = try? encoder.encode(self.hypedEvents) {
                 defaults.setValue(encoded, forKey: "hypedEvents")
                 defaults.synchronize()
+                #if !os(tvOS)
                 WidgetCenter.shared.reloadAllTimelines()
+                #endif
             }
         }
-#if !os(macOS)
+#if !os(macOS) && !os(tvOS)
             PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.upcomingHypedEvent))
             #endif
         }
@@ -83,7 +87,7 @@ class DataController: ObservableObject {
                 if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
                     DispatchQueue.main.async {
                         self.hypedEvents = savedHypedEvent
-                        #if !os(macOS)
+                        #if !os(macOS) && !os(tvOS)
                         PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.upcomingHypedEvent))
                         #endif
                     }
