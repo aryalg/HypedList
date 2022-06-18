@@ -12,6 +12,11 @@ struct HypedListTVApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    DataController.shared.loadData()
+                    DataController.shared.getDiscoverEvents()
+                  
+                }
         }
     }
 }

@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var data = DataController.shared
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            HypedEventListView(hypedEvents: data.upcomingHypedEvent, noEventText: "No Upcoming Events. Please create one!")   .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Upcoming")
+                }
+            HypedEventListView(hypedEvents: data.discoverHypedEvents, noEventText: "Loading Some Aweseome Stuff for ya")
+          
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Discover")
+                }
+            HypedEventListView(hypedEvents: data.pastHypedEvent, noEventText: "No Past Events")
+                .tabItem {
+                    Image(systemName: "gobackward")
+                    Text("Past")
+                }
+        }
     }
 }
 
