@@ -29,8 +29,8 @@ struct CreateHypedEventView: View {
         
     
     var bodyMac: some View {
-        ScrollView {
-        Form {
+        VStack {
+            VStack(alignment: .leading) {
            
             
             Section {
@@ -41,21 +41,21 @@ struct CreateHypedEventView: View {
             
             Section {
                 FormLabelView(title: "Date", iconSystemName: "calendar", color: .blue)
-                DatePicker("Date", selection: $hypedEvent.date, displayedComponents: showTime ? [.date, .hourAndMinute] : [.date])
-                    .datePickerStyle(.graphical)
+                DatePicker("Date", selection: $hypedEvent.date, displayedComponents: [.date, .hourAndMinute] )
+                    
                 
-                Toggle(isOn: $showTime) {
-                    FormLabelView(title: "Time", iconSystemName: "clock.fill", color: .blue)
-                }
+              
             }
             
         
             
             Section {
-                                ColorPicker(selection: $hypedEvent.color) {
-                                    FormLabelView(title: "Color", iconSystemName: "eyedropper", color: .yellow)
+                FormLabelView(title: "Color", iconSystemName: "eyedropper", color: .yellow)
 
+                                ColorPicker(selection: $hypedEvent.color) {
+                                 
                 }
+                                .frame(maxHeight: 30)
             }
             
             
@@ -71,8 +71,33 @@ struct CreateHypedEventView: View {
             
            
         }
-            .frame(minWidth: 400, minHeight: 300)
+            
+            .padding()
+            
+            Divider()
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                    dismiss()
+                }){
+                    Text("Cancel")
+                    
+                }
+                Button(action: {
+                    DataController.shared.saveHypedEvent(hypedEvent: hypedEvent)
+                    dismiss()
+                }){
+                    Text("Done")
+                        .keyboardShortcut(.defaultAction)
+                    
+                }
+                Spacer()
+               
+                
+            }
         }
+        .frame(minWidth: 400, minHeight: 400)
     }
         
 #if !os(macOS)
@@ -170,7 +195,7 @@ struct CreateHypedEventView: View {
             
         }, trailing: Button(action: {
             DataController.shared.saveHypedEvent(hypedEvent: hypedEvent)
-            DataController.shared.savedData()
+            
             dismiss()
         }){
             Text("Done")
@@ -188,5 +213,6 @@ struct CreateHypedEventView: View {
 struct CreateHypedEventView_Previews: PreviewProvider {
     static var previews: some View {
         CreateHypedEventView()
+            .previewLayout(.fixed(width: 400, height: 400))
     }
 }

@@ -40,7 +40,10 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
         try container.encode(url, forKey: CodingKeys.url)
         
 #if os(macOS)
-        try container.encode(NSColor(color).hexString(), forKey: CodingKeys.color)
+        if let ciColor = CIColor(color: NSColor(color)) {
+            
+        try container.encode(NSColor(ciColor: ciColor).hexString(), forKey: CodingKeys.color)
+        }
      
 #else
         try container.encode(UIColor(color).hexString(), forKey: CodingKeys.color)
