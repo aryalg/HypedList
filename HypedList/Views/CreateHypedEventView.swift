@@ -17,6 +17,23 @@ struct CreateHypedEventView: View {
     
     var body: some View {
         
+        #if os(macOS)
+        bodyMac
+        #else
+        bodyNotMac
+        #endif
+        
+        
+    }
+        
+        
+    
+    var bodyMac: some View {
+        Text("MAC OS")
+    }
+        
+#if !os(macOS)
+    var bodyNotMac: some View {
         NavigationView {
         
         Form {
@@ -62,7 +79,10 @@ struct CreateHypedEventView: View {
                     }
                     .buttonStyle(BorderlessButtonStyle())
                     .sheet(isPresented: $showImagePicker) {
+                        #if !os(macOS)
+                    
                         ImagePicker(imageData: $hypedEvent.imageData)
+                        #endif
                     }
                 }
                 }
@@ -118,6 +138,8 @@ struct CreateHypedEventView: View {
         .navigationTitle("Create")
         }
     }
+    #endif
+    
 }
 
 struct CreateHypedEventView_Previews: PreviewProvider {

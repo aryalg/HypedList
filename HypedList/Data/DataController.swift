@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftDate
-import UIKit
 import UIColorHexSwift
 import SwiftUI
 import WidgetKit
@@ -41,7 +40,9 @@ class DataController: ObservableObject {
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
+#if !os(macOS)
             PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.upcomingHypedEvent))
+            #endif
         }
     }
     
@@ -82,7 +83,9 @@ class DataController: ObservableObject {
                 if let savedHypedEvent = try? decoder.decode([HypedEvent].self, from: data) {
                     DispatchQueue.main.async {
                         self.hypedEvents = savedHypedEvent
+                        #if !os(macOS)
                         PhoneToWatchDataController.shared.sendContext(context: PhoneToWatchDataController.shared.convertHypedEventsToContext(hypedEvents: self.upcomingHypedEvent))
+                        #endif
                     }
                    
                 }
@@ -113,7 +116,9 @@ class DataController: ObservableObject {
     func getDiscoverEvents() {
         if let url = URL(string: "https://api.jsonbin.io/b/62ab8106402a5b38022b0662/latest") {
             let request = URLRequest(url: url)
-            URLSession.shared.dataTask(with: request) {(data, response, error) in
+            URLSession.shared.dataTask(with: request) {
+                (data, response, error) in
+                do {
                 if let webData = data {
                     if let json = try? JSONSerialization.jsonObject(with: webData, options: []) as? [[String:String]] {
                         
@@ -142,7 +147,15 @@ class DataController: ObservableObject {
                             }
                             
                             if let colorHex = jsonHypedEvent["color"] {
-                                hypedEvent.color = Color(UIColor(colorHex))
+                             
+                                #if os(macOS)
+                                if let nsColor = try? Color(NSColor(rgba_throws: "#" + colorHex)) {
+                                hypedEvent.color = nsColor
+                                }
+                                #else
+                                hypedEvent.color = Color(UIColor("#" + colorHex))
+                                #endif
+                                
                             }
                             
                             if let imageUrl = jsonHypedEvent["imageURL"] {
@@ -162,6 +175,9 @@ class DataController: ObservableObject {
                         
                         
                     }
+                }
+                } catch {
+                    
                 }
             }.resume()
         }

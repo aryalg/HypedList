@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct HypedEventDetailView: View {
-    
+#if os(macOS)
+#else
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+#endif
+    
+    
+    
+    
     
     @ObservedObject var hypedEvent: HypedEvent
     var isDiscover = false
@@ -20,11 +26,15 @@ struct HypedEventDetailView: View {
         if deleted {
             Text("Select an Event")
         } else {
+            #if !os(macOS)
             if(horizontalSizeClass == .compact) {
                 compact
             } else {
                 regular
             }
+            #else
+            regular
+            #endif
             
         }
         
@@ -63,7 +73,12 @@ struct HypedEventDetailView: View {
                 
                 if(hypedEvent.validURL() != nil) {
                     Button(action: {
+                        #if os(macOS)
+                        NSWorkspace.shared.open(hypedEvent.validURL()!)
+                        #else
                         UIApplication.shared.open(hypedEvent.validURL()!)
+                        #endif
+                        
                     }) {
                         HypedEventDetailViewButtonCompact(backgroundColor: .orange, imageName: "link", text: "Visit Site")
                     }.padding(.bottom, 10)
@@ -117,6 +132,8 @@ struct HypedEventDetailView: View {
         .padding(40)
     }
     
+    #if os(macOS)
+    
     var compact: some View {
         VStack(spacing: 0) {
             if(hypedEvent.image() != nil) {
@@ -144,7 +161,11 @@ struct HypedEventDetailView: View {
             
             if(hypedEvent.validURL() != nil) {
                 Button(action: {
+#if os(macOS)
+NSWorkspace.shared.open(hypedEvent.validURL()!)
+                    #else
                     UIApplication.shared.open(hypedEvent.validURL()!)
+                    #endif
                 }) {
                     HypedEventDetailViewButton(backgroundColor: .orange, imageName: "link", text: "Visit Site")
                 }.padding(.bottom, 10)
@@ -193,9 +214,16 @@ struct HypedEventDetailView: View {
             
             
             
-        }.navigationBarTitleDisplayMode(.inline)
+        }
+
+    
+      
+
+        
         
     }
+    
+#endif
     
     
    

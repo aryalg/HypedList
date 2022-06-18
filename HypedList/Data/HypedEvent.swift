@@ -39,7 +39,14 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
         try container.encode(title, forKey: CodingKeys.title)
         try container.encode(url, forKey: CodingKeys.url)
         
+#if os(macOS)
+        try container.encode(NSColor(color).hexString(), forKey: CodingKeys.color)
+     
+#else
         try container.encode(UIColor(color).hexString(), forKey: CodingKeys.color)
+#endif
+        
+        
         try container.encode(imageData, forKey: CodingKeys.imageData)
 
         
@@ -53,7 +60,12 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
         title = try values.decode(String.self, forKey: CodingKeys.title)
         url = try values.decode(String.self, forKey: CodingKeys.url)
         let colorHex = try values.decode(String.self, forKey: .color)
+#if os(macOS)
+        color = try! Color(nsColor: NSColor(rgba_throws: colorHex))
+#else
         color = Color(UIColor(colorHex))
+#endif
+        
         imageData = try? values.decode(Data.self, forKey: CodingKeys.imageData)
         
     }
@@ -80,9 +92,19 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
     
     func image() -> Image? {
         if let data = imageData {
+            #if os(macOS)
+            
+            if let nsImage = NSImage(data: data) {
+                return Image(nsImage: nsImage)
+            }
+            
+            #else
             if let uiImage = UIImage(data: data) {
                 return Image(uiImage: uiImage)
             }
+            
+            #endif
+           
         }
         
         return nil
@@ -119,11 +141,19 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
 var testHypedEvent1: HypedEvent {
     let hypedEvent = HypedEvent()
     
+    #if os(macOS)
+    if let image = NSImage(named: "wwdc") {
+        if let  data = image.tiffRepresentation {
+            hypedEvent.imageData = data
+        }
+    }
+    #else
     if let image = UIImage(named: "wwdc") {
         if let  data = image.pngData() {
             hypedEvent.imageData = data
         }
     }
+    #endif
     
     hypedEvent.title = "WWDC 2021"
     hypedEvent.color = .green
