@@ -56,6 +56,15 @@
 		04ABCE82285DB48400DDADFB /* HypedEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0E2285BAD3E009107C3 /* HypedEventListView.swift */; };
 		04ABCE83285DB48400DDADFB /* HypedEventTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0D6285B82B4009107C3 /* HypedEventTileView.swift */; };
 		04ABCE84285DB77B00DDADFB /* HypedListSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABCE2E285CC0BA00DDADFB /* HypedListSidebarView.swift */; };
+		04ABCE8A285E617B00DDADFB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AA0EC285C97DA009107C3 /* WidgetKit.framework */; };
+		04ABCE8B285E617B00DDADFB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AA0EE285C97DA009107C3 /* SwiftUI.framework */; };
+		04ABCE90285E617C00DDADFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ABCE8F285E617C00DDADFB /* Assets.xcassets */; };
+		04ABCE95285E617C00DDADFB /* HypedListMacWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04ABCE89285E617B00DDADFB /* HypedListMacWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04ABCE9A285E61AC00DDADFB /* HypedListiOSWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0F1285C97DA009107C3 /* HypedListiOSWidget.swift */; };
+		04ABCE9B285E61C300DDADFB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA0DB285B92EA009107C3 /* DataController.swift */; };
+		04ABCE9C285E61CE00DDADFB /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B520AC2857835700AD7C64 /* HypedEvent.swift */; };
+		04ABCE9E285E61EA00DDADFB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 04ABCE9D285E61EA00DDADFB /* SwiftDate */; };
+		04ABCEA0285E61EA00DDADFB /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04ABCE9F285E61EA00DDADFB /* UIColorHexSwift */; };
 		04B5209728577D5F00AD7C64 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209628577D5F00AD7C64 /* HypedListApp.swift */; };
 		04B5209928577D5F00AD7C64 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5209828577D5F00AD7C64 /* HypedListTabView.swift */; };
 		04B5209B28577D6200AD7C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5209A28577D6200AD7C64 /* Assets.xcassets */; };
@@ -90,6 +99,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 04ABCE31285D00F900DDADFB;
 			remoteInfo = HypedListWatch;
+		};
+		04ABCE93285E617C00DDADFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04B5208B28577D5F00AD7C64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04ABCE88285E617B00DDADFB;
+			remoteInfo = HypedListMacWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -127,6 +143,17 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04ABCE99285E617C00DDADFB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04ABCE95285E617C00DDADFB /* HypedListMacWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +189,10 @@
 		04ABCE6D285DB29200DDADFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04ABCE70285DB29200DDADFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04ABCE72285DB29200DDADFB /* HypedListMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HypedListMac.entitlements; sourceTree = "<group>"; };
+		04ABCE89285E617B00DDADFB /* HypedListMacWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HypedListMacWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		04ABCE8F285E617C00DDADFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04ABCE91285E617C00DDADFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04ABCE92285E617C00DDADFB /* HypedListMacWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HypedListMacWidget.entitlements; sourceTree = "<group>"; };
 		04B5209328577D5F00AD7C64 /* Hyped List App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyped List App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5209628577D5F00AD7C64 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		04B5209828577D5F00AD7C64 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -203,6 +234,17 @@
 			files = (
 				04ABCE7B285DB40900DDADFB /* UIColorHexSwift in Frameworks */,
 				04ABCE79285DB40900DDADFB /* SwiftDate in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04ABCE86285E617B00DDADFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04ABCE8B285E617B00DDADFB /* SwiftUI.framework in Frameworks */,
+				04ABCE8A285E617B00DDADFB /* WidgetKit.framework in Frameworks */,
+				04ABCEA0285E61EA00DDADFB /* UIColorHexSwift in Frameworks */,
+				04ABCE9E285E61EA00DDADFB /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +356,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		04ABCE8C285E617B00DDADFB /* HypedListMacWidget */ = {
+			isa = PBXGroup;
+			children = (
+				04ABCE8F285E617C00DDADFB /* Assets.xcassets */,
+				04ABCE91285E617C00DDADFB /* Info.plist */,
+				04ABCE92285E617C00DDADFB /* HypedListMacWidget.entitlements */,
+			);
+			path = HypedListMacWidget;
+			sourceTree = "<group>";
+		};
 		04B5208A28577D5F00AD7C64 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +376,7 @@
 				04ABCE33285D00F900DDADFB /* HypedListWatch */,
 				04ABCE3E285D00FB00DDADFB /* HypedListWatch WatchKit Extension */,
 				04ABCE68285DB29000DDADFB /* HypedListMac */,
+				04ABCE8C285E617B00DDADFB /* HypedListMacWidget */,
 				046AA0EB285C97DA009107C3 /* Frameworks */,
 				04B5209428577D5F00AD7C64 /* Products */,
 			);
@@ -337,6 +390,7 @@
 				04ABCE32285D00F900DDADFB /* Hyped List Watch Extension.app */,
 				04ABCE3A285D00FB00DDADFB /* HypedListWatch WatchKit Extension.appex */,
 				04ABCE67285DB29000DDADFB /* HypedListMac.app */,
+				04ABCE89285E617B00DDADFB /* HypedListMacWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -433,10 +487,12 @@
 				04ABCE63285DB29000DDADFB /* Sources */,
 				04ABCE64285DB29000DDADFB /* Frameworks */,
 				04ABCE65285DB29000DDADFB /* Resources */,
+				04ABCE99285E617C00DDADFB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04ABCE94285E617C00DDADFB /* PBXTargetDependency */,
 			);
 			name = HypedListMac;
 			packageProductDependencies = (
@@ -446,6 +502,27 @@
 			productName = HypedListMac;
 			productReference = 04ABCE67285DB29000DDADFB /* HypedListMac.app */;
 			productType = "com.apple.product-type.application";
+		};
+		04ABCE88285E617B00DDADFB /* HypedListMacWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04ABCE96285E617C00DDADFB /* Build configuration list for PBXNativeTarget "HypedListMacWidgetExtension" */;
+			buildPhases = (
+				04ABCE85285E617B00DDADFB /* Sources */,
+				04ABCE86285E617B00DDADFB /* Frameworks */,
+				04ABCE87285E617B00DDADFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HypedListMacWidgetExtension;
+			packageProductDependencies = (
+				04ABCE9D285E61EA00DDADFB /* SwiftDate */,
+				04ABCE9F285E61EA00DDADFB /* UIColorHexSwift */,
+			);
+			productName = HypedListMacWidgetExtension;
+			productReference = 04ABCE89285E617B00DDADFB /* HypedListMacWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		04B5209228577D5F00AD7C64 /* HypedListiOS */ = {
 			isa = PBXNativeTarget;
@@ -494,6 +571,9 @@
 					04ABCE66285DB29000DDADFB = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					04ABCE88285E617B00DDADFB = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					04B5209228577D5F00AD7C64 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -521,6 +601,7 @@
 				04ABCE31285D00F900DDADFB /* HypedListWatch */,
 				04ABCE39285D00FB00DDADFB /* HypedListWatch WatchKit Extension */,
 				04ABCE66285DB29000DDADFB /* HypedListMac */,
+				04ABCE88285E617B00DDADFB /* HypedListMacWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -557,6 +638,14 @@
 			files = (
 				04ABCE71285DB29200DDADFB /* Preview Assets.xcassets in Resources */,
 				04ABCE6E285DB29200DDADFB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04ABCE87285E617B00DDADFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04ABCE90285E617C00DDADFB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +705,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04ABCE85285E617B00DDADFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04ABCE9C285E61CE00DDADFB /* HypedEvent.swift in Sources */,
+				04ABCE9A285E61AC00DDADFB /* HypedListiOSWidget.swift in Sources */,
+				04ABCE9B285E61C300DDADFB /* DataController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04B5208F28577D5F00AD7C64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -656,6 +755,11 @@
 			isa = PBXTargetDependency;
 			target = 04ABCE31285D00F900DDADFB /* HypedListWatch */;
 			targetProxy = 04ABCE4B285D00FB00DDADFB /* PBXContainerItemProxy */;
+		};
+		04ABCE94285E617C00DDADFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04ABCE88285E617B00DDADFB /* HypedListMacWidgetExtension */;
+			targetProxy = 04ABCE93285E617C00DDADFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -833,6 +937,7 @@
 		04ABCE74285DB29200DDADFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HypedListMac/HypedListMac.entitlements;
@@ -863,6 +968,7 @@
 		04ABCE75285DB29200DDADFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HypedListMac/HypedListMac.entitlements;
@@ -885,6 +991,66 @@
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedListMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		04ABCE97285E617C00DDADFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HypedListMacWidget/HypedListMacWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RT32ZWV93X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HypedListMacWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HypedListMacWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedListMac.HypedListMacWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		04ABCE98285E617C00DDADFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HypedListMacWidget/HypedListMacWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RT32ZWV93X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HypedListMacWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HypedListMacWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.bitpointx.HypedListMac.HypedListMacWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1107,6 +1273,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		04ABCE96285E617C00DDADFB /* Build configuration list for PBXNativeTarget "HypedListMacWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04ABCE97285E617C00DDADFB /* Debug */,
+				04ABCE98285E617C00DDADFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04B5208E28577D5F00AD7C64 /* Build configuration list for PBXProject "HypedList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1183,6 +1358,16 @@
 			productName = SwiftDate;
 		};
 		04ABCE7A285DB40900DDADFB /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046AA0DF285BA69B009107C3 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
+		};
+		04ABCE9D285E61EA00DDADFB /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046AA0D8285B8FD8009107C3 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		04ABCE9F285E61EA00DDADFB /* UIColorHexSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 046AA0DF285BA69B009107C3 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
 			productName = UIColorHexSwift;
