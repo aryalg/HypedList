@@ -13,32 +13,53 @@ struct HypedEventListView: View {
     var isDiscover = false
     
     var body: some View {
-        ScrollView {
         
-        VStack {
-            if hypedEvents.isEmpty {
-            Text(noEventText)
-                .bold()
-                .multilineTextAlignment(.center)
-                .padding(.top, 50)
-                .padding(.horizontal, 10)
+        if hypedEvents.isEmpty {
+        Text(noEventText)
+            .bold()
+            .multilineTextAlignment(.center)
+            .padding(.top, 50)
+            .padding(.horizontal, 10)
         } else {
+        ScrollView(.horizontal) {
+            
+            
+        
+        HStack {
+            
             ForEach(hypedEvents) { hypedEvent in
                 
-               
+                Button(action:{}) {
                 
-                HypedEventTileView(hypedEvent: hypedEvent)
-               
+                HypedEventTVTileView(hypedEvent: hypedEvent)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .contextMenu {
+                    if isDiscover {
+                        Button(action: {
+                            DataController.shared.addFromDiscover(hypedEvent: hypedEvent)
+                        }) {
+                            Text("Add")
+                        }
+                    } else {
+                    Button(action: {
+                        DataController.shared.deleteHypedEvent(hypedEvent: hypedEvent)
+                    }) {
+                        Text("Delete")
+                    }
+                    }
+                }
             }
            
         }
-        }
+        
         }.frame(minWidth: 250)
+        }
     }
 }
 
 struct HypedEventListView_Previews: PreviewProvider {
     static var previews: some View {
-        HypedEventListView(hypedEvents: [testHypedEvent1], noEventText: "No Events")
+        HypedEventListView(hypedEvents: [testHypedEvent1, testHypedEvent2], noEventText: "No Events")
     }
 }
