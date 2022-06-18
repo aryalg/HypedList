@@ -50,6 +50,9 @@ struct HypedListSidebarView: View {
             }) {
                 Label("Create Event", systemImage: "calendar.badge.plus")
             }
+            .buttonStyle(PlainButtonStyle())
+            .padding(.bottom, 10)
+            .foregroundColor(.blue)
             .sheet(isPresented: $showingCreateView ) {
                 CreateHypedEventView()
             }

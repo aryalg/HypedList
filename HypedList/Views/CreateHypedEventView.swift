@@ -36,16 +36,20 @@ struct CreateHypedEventView: View {
             Section {
                 FormLabelView(title: "Title", iconSystemName: "keyboard", color: .red)
                 TextField("Family Vacation", text: $hypedEvent.title)
+                    .padding(.bottom, 20)
                     
             }
+            
             
             Section {
                 FormLabelView(title: "Date", iconSystemName: "calendar", color: .blue)
                 DatePicker("Date", selection: $hypedEvent.date, displayedComponents: [.date, .hourAndMinute] )
+                    .padding(.bottom, 20)
                     
                 
               
             }
+                
             
         
             
@@ -56,13 +60,16 @@ struct CreateHypedEventView: View {
                                  
                 }
                                 .frame(maxHeight: 30)
+                                .padding(.bottom, 20)
             }
             
             
             
             Section {
                 FormLabelView(title: "URL", iconSystemName: "link", color: .orange)
+                    
                 TextField("bitpointx.com.au", text: $hypedEvent.url)
+                    .padding(.bottom, 20)
                     
                     
                     
@@ -89,9 +96,10 @@ struct CreateHypedEventView: View {
                     dismiss()
                 }){
                     Text("Done")
-                        .keyboardShortcut(.defaultAction)
+                       
                     
                 }
+                .keyboardShortcut(.defaultAction)
                 Spacer()
                
                 
